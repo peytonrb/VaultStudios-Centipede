@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 2034747378}
   - component: {fileID: 2034747377}
   - component: {fileID: 2034747376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
