@@ -10,12 +10,13 @@ public class BulletController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
-        Destroy(gameObject);
-    }
-
     public void Launch(Vector2 direction, float force)
     {
         rigidbody.AddForce(direction * force);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("Enter Bullet Collision");
+        Destroy(gameObject);
     }
 }

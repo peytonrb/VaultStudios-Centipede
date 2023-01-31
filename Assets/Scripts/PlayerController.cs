@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
         {
             GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * 500);
-            Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
     }
 
