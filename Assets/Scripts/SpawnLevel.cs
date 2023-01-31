@@ -7,6 +7,7 @@ public class SpawnLevel : MonoBehaviour
     private BoxCollider2D field;
     public GameObject mushroom;
     public int amount = 50;
+    public GameObject spider;
 
     void Awake() {
         field = GetComponent<BoxCollider2D>();
@@ -18,15 +19,16 @@ public class SpawnLevel : MonoBehaviour
 
     private void GenerateField() {
         Bounds bounds = field.bounds;
+        Vector2 position = Vector2.zero;
 
         for (int i = 0; i < amount; i++) {
-            Vector2 position = Vector2.zero;
-
             position.x = Mathf.Round(Random.Range(bounds.min.x, bounds.max.x));
             position.y = Mathf.Round(Random.Range(bounds.min.y, bounds.max.y));
 
             Instantiate(mushroom, position, Quaternion.identity, transform);
         }
+
+        Instantiate(spider, position, Quaternion.identity, transform);
     }
 
     public void ClearField()

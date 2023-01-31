@@ -4,9 +4,23 @@ using UnityEngine;
 
 public class Mushroom : MonoBehaviour
 {
-    public int health = 4;
+    private int health = 4;
+    private Animator animator;
 
-    void Update() {      
+    void Start() {    
+        animator = GetComponent<Animator>();
+    }
+
+    void Update() {
+        // if (health == 4) {
+        //     animator.SetFloat("name", 0);
+        // } else if (health == 3) {
+        //     animator.SetFloat("name", 1);
+        // } else if (health == 2) {
+        //     animator.SetFloat("name", 2);
+        // } else {
+        //     animator.SetFloat("name", 3);
+        // }
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
