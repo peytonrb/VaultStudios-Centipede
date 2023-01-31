@@ -28,6 +28,15 @@ public class Mushroom : MonoBehaviour
             this.health--;
         } 
 
+        // if spider collides with mushroom, there is a 30% chance it will destroy
+        if (collision.gameObject.CompareTag("Spider")) {
+            float roll = Mathf.Round(Random.Range(0, 10));
+
+            if (roll <= 7 && roll >= 10) {
+                Destroy(gameObject);
+            }
+        }
+
         if (this.health <= 0) { 
             Destroy(gameObject);        
         }   

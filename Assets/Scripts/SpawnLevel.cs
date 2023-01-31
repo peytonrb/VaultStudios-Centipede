@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnLevel : MonoBehaviour
 {
-    private BoxCollider2D field;
+    private static BoxCollider2D field;
     public GameObject mushroom;
     public int amount = 50;
     public GameObject spider;

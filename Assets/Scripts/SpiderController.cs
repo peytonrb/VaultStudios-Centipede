@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SpiderController : MonoBehaviour
 {
-    private float minX = -12.7f;
+    private float minX = -10.25f;
     private float maxX = 7.5f;
-    private float minY = -13.75f;
-    private float maxY = 10.2f; // magic numbers bc bounds is not in scope of this method
+    private float minY = -14f;
+    private float maxY = 10.2f; // magic numbers bc bounds are not in scope of this method
     public GameObject spider;
     private BoxCollider2D field;
     private Vector2 targetPosition;
