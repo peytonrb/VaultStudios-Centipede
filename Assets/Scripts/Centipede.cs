@@ -14,8 +14,7 @@ public class Centipede : MonoBehaviour
     public GameObject[] path;
 
     void Start() {
-        Debug.Log("entered");
-        transform.position = path[pathIndex].transform.position;
+        // transform.position = path[pathIndex].transform.position;
 
         for (int i = 0; i <= segmentLength; i++) {
 
@@ -45,7 +44,7 @@ public class Centipede : MonoBehaviour
 
     private void move() {
         Transform currentLocation = transform;
-        transform.right = path[pathIndex].transform.position - transform.position;
+        // transform.right = path[pathIndex].transform.position - transform.position;
 
         for (int i = 0; i < segments.Count; i++) {
             if (i == 0) {

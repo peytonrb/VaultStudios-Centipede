@@ -16,8 +16,10 @@ public class PlayerController : MonoBehaviour
     public GameObject heart1, heart2, heart3;
     private int totalScore = 0;
     public TextMeshProUGUI scoreText;
+    private int round = 0;
 
     void Start() {
+        round++;
         rigidbody = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
         heart1.gameObject.SetActive(true);
@@ -73,5 +75,9 @@ public class PlayerController : MonoBehaviour
     public void changeScore(int score) {
         totalScore += score;
         scoreText.text = totalScore.ToString();
+    }
+
+    public int getRound() {
+        return round;
     }
 }

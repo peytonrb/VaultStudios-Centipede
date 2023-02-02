@@ -43,11 +43,11 @@ public class SpiderController : MonoBehaviour
         if (collision.collider.tag == "Barrier") {
             transform.position = Vector2.MoveTowards(-(transform.position), targetPosition, speed * Time.deltaTime);
         } else if (collision.gameObject.CompareTag("Bullet")) {
-
+      
             if (player != null) {
                 if (currentLocation > 6.5f) {
                     player.changeScore(900);
-                } else if (currentLocation <= 6.5f || currentLocation > 3.5f) {
+                } else if (currentLocation <= 4.5f && currentLocation > -3.5f) {
                     player.changeScore(600);
                 } else {
                     player.changeScore(300);
