@@ -4,37 +4,35 @@ using UnityEngine;
 
 public class Mushroom : MonoBehaviour
 {
-    private int health = 4;
-    private Animator animator;
+    private int health = 3;
+    private SpriteRenderer spriteRenderer;
+    public Sprite[] healthState;
+    private PlayerController player;
 
     void Start() {    
-        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        player = playerObject.GetComponent<PlayerController>();
     }
 
-    void Update() {
-        // if (health == 4) {
-        //     animator.SetFloat("name", 0);
-        // } else if (health == 3) {
-        //     animator.SetFloat("name", 1);
-        // } else if (health == 2) {
-        //     animator.SetFloat("name", 2);
-        // } else {
-        //     animator.SetFloat("name", 3);
-        // }
-    }
-
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Bullet")){
+    public void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Bullet")) {
             this.health--;
+
+            if (health == 2) {
+                spriteRenderer.sprite = (Sprite) Resources.Load<Sprite>("Sprites/shell_2") as Sprite;
+            } else if (health == 1) {
+                spriteRenderer.sprite = (Sprite) Resources.Load<Sprite>("Sprites/shell_3") as Sprite;
+            } else {
+                if (player != null) {
+                    player.changeScore(1);
+                }
+            }
         } 
 
         // if spider collides with mushroom, there is a 30% chance it will destroy
         if (collision.gameObject.CompareTag("Spider")) {
-            float roll = Mathf.Round(Random.Range(0, 10));
-
-            if (roll <= 7 && roll >= 10) {
-                Destroy(gameObject);
-            }
+            this.health--;
         }
 
         if (this.health <= 0) { 

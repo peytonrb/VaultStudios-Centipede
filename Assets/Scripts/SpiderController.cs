@@ -12,9 +12,12 @@ public class SpiderController : MonoBehaviour
     private BoxCollider2D field;
     private Vector2 targetPosition;
     private float speed = 7f;
+    private PlayerController player;
 
     void Start() {
         targetPosition = getPosition();
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        player = playerObject.GetComponent<PlayerController>();
     }
 
     void Update() {
@@ -34,9 +37,25 @@ public class SpiderController : MonoBehaviour
         return newPosition;
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
+    public void OnCollisionEnter2D(Collision2D collision) {
+        float currentLocation = gameObject.transform.position.y;
+
         if (collision.collider.tag == "Barrier") {
             transform.position = Vector2.MoveTowards(-(transform.position), targetPosition, speed * Time.deltaTime);
+        } else if (collision.gameObject.CompareTag("Bullet")) {
+
+            if (player != null) {
+                if (currentLocation > 6.5f) {
+                    player.changeScore(900);
+                } else if (currentLocation <= 6.5f || currentLocation > 3.5f) {
+                    player.changeScore(600);
+                } else {
+                    player.changeScore(300);
+                }
+
+            }
+
+            Destroy(gameObject);
         }
     }
 }

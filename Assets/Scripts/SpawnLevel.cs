@@ -14,10 +14,6 @@ public class SpawnLevel : MonoBehaviour
     }
 
     void Start() {
-        GenerateField();
-    }
-
-    private void GenerateField() {
         Bounds bounds = field.bounds;
         Vector2 position = Vector2.zero;
 
