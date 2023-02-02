@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3268497820983945038}
   - component: {fileID: 2177136526235611551}
   - component: {fileID: 7943863683864160332}
-  - component: {fileID: 3286774444283205032}
+  - component: {fileID: 1138525504389007614}
   m_Layer: 0
   m_Name: CentipedeSegment
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4978223479905376949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.001, y: 0.669, z: 0}
-  m_LocalScale: {x: 1.3357, y: 1.3357, z: 1.3357}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8a1d8a252a72e949bc6dfc243662613, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38100f437c36953459597b2f7bc023ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0045239925, y: -0.006785959}
+  m_Offset: {x: -0.0067814887, y: -0.006785959}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,9 +110,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.76380074, y: 0.6868929}
+  m_Size: {x: 0.65092605, y: 0.6868929}
   m_EdgeRadius: 0
---- !u!114 &3286774444283205032
+--- !u!114 &1138525504389007614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,9 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4978223479905376949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e0a1af9a686b5749a7d73749aa3072b, type: 3}
+  m_Script: {fileID: 11500000, guid: 70c934e4aee5b4245ab926b947c3f53e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head: {fileID: 2075923335458700507, guid: def8edfa3136f284cb001fb4d69bc7de, type: 3}
-  body: {fileID: 4978223479905376949}
-  path: []
