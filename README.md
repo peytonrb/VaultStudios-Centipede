@@ -1,8 +1,8 @@
 # Vault Studios: Centipede
 Program of Centipede in Unity with new mechanics and style
 
-To access the Unity C# scripts, go into Assets -> Scripts to see each asset controller. The original sprites are in 
-Assets -> Sprites along with our original background theme and menu. 
+To access the Unity C# scripts, go into Assets -> Scripts to see each asset controller. The original sprites are in Assets
+-> Sprites along with our original background theme and menu. 
 
 Click here to play our build!
 
