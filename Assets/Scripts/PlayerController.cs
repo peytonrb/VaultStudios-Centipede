@@ -52,8 +52,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-  
-        if (collision.collider.tag == "Spider") {
+        if (collision.collider.tag == "Spider" || collision.collider.tag == "Centipede") {
             lives--;
 
             if (lives > 0) {

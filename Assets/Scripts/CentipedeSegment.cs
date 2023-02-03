@@ -35,7 +35,7 @@ public class CentipedeSegment : MonoBehaviour
         Vector2 gridPosition = centipede.GridPosition(transform.position);
         targetPosition = gridPosition;
         targetPosition.x += direction.x;
-
+        
         if (Physics2D.OverlapBox(targetPosition, Vector2.zero, 0f, centipede.collisionMask)) {
             direction.x = -direction.x;
             targetPosition.x = gridPosition.x;
