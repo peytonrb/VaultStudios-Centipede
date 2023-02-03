@@ -11,7 +11,7 @@ public class SpiderController : MonoBehaviour
     public GameObject spider;
     private BoxCollider2D field;
     private Vector2 targetPosition;
-    private float speed = 7f;
+    private float speed = 8f;
     private PlayerController player;
 
     void Start() {

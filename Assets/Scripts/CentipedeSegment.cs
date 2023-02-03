@@ -31,7 +31,7 @@ public class CentipedeSegment : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
     }
 
-    private void updateHeadSegment() {
+    public void updateHeadSegment() {
         Vector2 gridPosition = centipede.GridPosition(transform.position);
         targetPosition = gridPosition;
         targetPosition.x += direction.x;
@@ -40,6 +40,15 @@ public class CentipedeSegment : MonoBehaviour
             direction.x = -direction.x;
             targetPosition.x = gridPosition.x;
             targetPosition.y = gridPosition.y + direction.y;
+
+            Bounds homeBounds = centipede.homeArea.bounds;
+
+            // guarantees centipede stays within home once it enters
+            if ((direction.y == 1f && targetPosition.y > homeBounds.max.y) || 
+                (direction.y == -1f && targetPosition.y < homeBounds.min.y)) {
+                direction.y = -direction.y;
+                targetPosition.y = gridPosition.y + direction.y;
+            }
         }
 
         if (behind != null) {
@@ -47,12 +56,18 @@ public class CentipedeSegment : MonoBehaviour
         }
     }
 
-    private void updateBodySegment() {
+    public void updateBodySegment() {
         targetPosition = centipede.GridPosition(ahead.transform.position);
         direction = ahead.direction;
 
         if (behind != null) {
             behind.updateBodySegment(); // check for tail
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet")) {
+            centipede.Remove(this);
         }
     }
 }
