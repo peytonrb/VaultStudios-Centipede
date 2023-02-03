@@ -14,10 +14,12 @@ public class CentipedeController : MonoBehaviour
     public LayerMask collisionMask;
     public BoxCollider2D homeArea; // prevents centipede from leaving the space
     private PlayerController player;
+    private SpiderController spider;
 
     void Start() {
         GameObject playerObject = GameObject.FindWithTag("Player");
         player = playerObject.GetComponent<PlayerController>();
+
         respawn();
     }
 
@@ -86,5 +88,12 @@ public class CentipedeController : MonoBehaviour
 
         segments.Remove(segment);
         Destroy(segment.gameObject);
+
+        // instantiates a new level
+        if (segments.Count == 0) {
+            speed *= 1.1f;
+            respawn();
+            // spider.speed *= 1.1f;
+        }
     }
 }
