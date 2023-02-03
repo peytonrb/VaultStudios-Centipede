@@ -6,7 +6,7 @@ public class SpawnLevel : MonoBehaviour
 {
     private static BoxCollider2D field;
     public GameObject mushroom;
-    public int amount = 50;
+    public int amount = 60;
     public GameObject spider;
 
     void Awake() {
