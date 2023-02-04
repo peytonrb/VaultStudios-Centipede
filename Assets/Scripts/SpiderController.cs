@@ -16,7 +16,6 @@ public class SpiderController : MonoBehaviour
     private AudioSource source;
     public AudioClip hurt;
     private CentipedeController centipede;
-    private bool hasChanged = false;
 
     void Start() {
         source = GetComponent<AudioSource>();
