@@ -15,10 +15,13 @@ public class CentipedeController : MonoBehaviour
     public BoxCollider2D homeArea; // prevents centipede from leaving the space
     private PlayerController player;
     private SpiderController spider;
+    private AudioSource source;
+    public AudioClip hurt;
 
     void Start() {
         GameObject playerObject = GameObject.FindWithTag("Player");
         player = playerObject.GetComponent<PlayerController>();
+        source = GetComponent<AudioSource>();
 
         respawn();
     }
@@ -72,6 +75,7 @@ public class CentipedeController : MonoBehaviour
 
     public void Remove(CentipedeSegment segment) {
         player.changeScore(100);
+        source.PlayOneShot(hurt);
         Vector3 position = GridPosition(segment.transform.position);
         Instantiate(mushroomPrefab, position, Quaternion.identity);
 

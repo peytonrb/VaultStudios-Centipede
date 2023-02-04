@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private int round = 0;
 
+    // Audio
+    private AudioSource source;
+    public AudioClip bubble;
+    public AudioClip hurt;
+
     void Start() {
         round++;
         rigidbody = GetComponent<Rigidbody2D>();
@@ -25,6 +30,8 @@ public class PlayerController : MonoBehaviour
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
+
+        source = GetComponent<AudioSource>();
 
         changeScore(totalScore);
     }
@@ -34,6 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * 500);
+            source.PlayOneShot(bubble);
         }
     }
 
@@ -54,6 +62,7 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.tag == "Spider" || collision.collider.tag == "Centipede") {
             lives--;
+            source.PlayOneShot(hurt);
 
             if (lives > 0) {
                 transform.position = startPosition;

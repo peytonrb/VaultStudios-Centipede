@@ -13,8 +13,11 @@ public class SpiderController : MonoBehaviour
     private Vector2 targetPosition;
     public float speed = 8f;
     private PlayerController player;
+    private AudioSource source;
+    public AudioClip hurt;
 
     void Start() {
+        source = GetComponent<AudioSource>();
         targetPosition = getPosition();
         GameObject playerObject = GameObject.FindWithTag("Player");
         player = playerObject.GetComponent<PlayerController>();
@@ -43,7 +46,8 @@ public class SpiderController : MonoBehaviour
         if (collision.collider.tag == "Barrier") {
             transform.position = Vector2.MoveTowards(-(transform.position), targetPosition, speed * Time.deltaTime);
         } else if (collision.gameObject.CompareTag("Bullet")) {
-      
+            
+            source.PlayOneShot(hurt);
             if (player != null) {
                 if (currentLocation > 6.5f) {
                     player.changeScore(900);
