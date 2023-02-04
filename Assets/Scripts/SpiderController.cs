@@ -8,19 +8,23 @@ public class SpiderController : MonoBehaviour
     private float maxX = 7.5f;
     private float minY = -14f;
     private float maxY = 10.2f; // magic numbers bc spider ability to leave game area
-    public GameObject spider;
     private BoxCollider2D field;
+    public SpiderController spiderPrefab;
     private Vector2 targetPosition;
     public float speed = 8f;
     private PlayerController player;
     private AudioSource source;
     public AudioClip hurt;
+    private CentipedeController centipede;
+    private bool hasChanged = false;
 
     void Start() {
         source = GetComponent<AudioSource>();
         targetPosition = getPosition();
         GameObject playerObject = GameObject.FindWithTag("Player");
         player = playerObject.GetComponent<PlayerController>();
+        GameObject centipedeObject = GameObject.FindWithTag("Centipede");
+        centipede = centipedeObject.GetComponent<CentipedeController>();
     }
 
     void Update() {
@@ -29,6 +33,13 @@ public class SpiderController : MonoBehaviour
         } else {
             targetPosition = getPosition();
         }
+    }
+
+    public void respawnSpider() {
+        GetComponent<Collider2D>().enabled = true;
+        this.gameObject.GetComponent<Renderer>().enabled = true;
+        speed *= 1.1f;
+        Instantiate(gameObject, getPosition(), Quaternion.identity);
     }
 
     private Vector2 getPosition() {
@@ -45,8 +56,8 @@ public class SpiderController : MonoBehaviour
 
         if (collision.collider.tag == "Barrier") {
             transform.position = Vector2.MoveTowards(-(transform.position), targetPosition, speed * Time.deltaTime);
+
         } else if (collision.gameObject.CompareTag("Bullet")) {
-            
             source.PlayOneShot(hurt);
             if (player != null) {
                 if (currentLocation > 6.5f) {
@@ -56,10 +67,11 @@ public class SpiderController : MonoBehaviour
                 } else {
                     player.changeScore(300);
                 }
-
             }
 
-            Destroy(gameObject);
+            // gameObject.SetActive(false);
+            GetComponent<Collider2D>().enabled = false;
+            this.gameObject.GetComponent<Renderer>().enabled = false;
         }
     }
 }

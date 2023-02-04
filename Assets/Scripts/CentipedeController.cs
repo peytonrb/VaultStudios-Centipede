@@ -17,6 +17,7 @@ public class CentipedeController : MonoBehaviour
     private SpiderController spider;
     private AudioSource source;
     public AudioClip hurt;
+    public int level = 1;
 
     void Start() {
         GameObject playerObject = GameObject.FindWithTag("Player");
@@ -96,8 +97,12 @@ public class CentipedeController : MonoBehaviour
         // instantiates a new level
         if (segments.Count == 0) {
             speed *= 1.1f;
+            level++;
             respawn();
-            // spider.speed *= 1.1f;
+
+            GameObject spiderObject = GameObject.FindWithTag("Spider");
+            spider = spiderObject.GetComponent<SpiderController>();
+            spider.respawnSpider();
         }
     }
 }

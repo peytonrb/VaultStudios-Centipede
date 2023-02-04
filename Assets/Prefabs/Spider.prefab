@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e53de5392b4495647bca80d145c25081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spider: {fileID: 4852144447993284867}
+  spiderPrefab: {fileID: 0}
   speed: 8
   hurt: {fileID: 8300000, guid: 353426375b7c5184c8c5b328b3cf4b78, type: 3}
 --- !u!82 &3708627734871295428
