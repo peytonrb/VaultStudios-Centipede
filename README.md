@@ -5,6 +5,7 @@ To access the Unity C# scripts, go into Assets -> Scripts to see each asset cont
 -> Sprites along with our original background theme and menu. 
 
 Click here to play our build!
+https://sacukitty.itch.io/millipede
 
 # Controls
 Use WASD and Space to navigate the fish around the allocated space and shoot the shells, jellyfish, and millipede. The 
