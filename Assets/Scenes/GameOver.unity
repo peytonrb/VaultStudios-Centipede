@@ -306,6 +306,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4494806933570196532, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4494806933570196532, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.733
+      objectReference: {fileID: 0}
     - target: {fileID: 4494806933570196534, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
       propertyPath: m_Pivot.x
       value: 0
