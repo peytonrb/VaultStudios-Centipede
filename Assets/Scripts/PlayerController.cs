@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -76,6 +77,7 @@ public class PlayerController : MonoBehaviour
             } else {
                 heart3.gameObject.SetActive(false);
                 Destroy(gameObject);
+                SceneManager.LoadScene(2);
             }
         }
     }
