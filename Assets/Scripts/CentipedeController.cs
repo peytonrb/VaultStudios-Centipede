@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CentipedeController : MonoBehaviour
 {
@@ -96,6 +97,10 @@ public class CentipedeController : MonoBehaviour
 
         // instantiates a new level
         if (segments.Count == 0) {
+            if (level == 2)
+            {
+                SceneManager.LoadScene(3);
+            }
             speed *= 1.1f;
             level++;
             respawn();
@@ -103,6 +108,11 @@ public class CentipedeController : MonoBehaviour
             GameObject spiderObject = GameObject.FindWithTag("Spider");
             spider = spiderObject.GetComponent<SpiderController>();
             spider.respawnSpider();
+
+            
         }
+
+        
+        
     }
 }
