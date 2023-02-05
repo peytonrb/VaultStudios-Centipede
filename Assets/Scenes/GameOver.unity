@@ -282,6 +282,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4494806931942923730, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 631fc86211144424fb59f1984b7d72c2, type: 2}
+    - target: {fileID: 4494806931942923730, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1364075061547703358, guid: 631fc86211144424fb59f1984b7d72c2, type: 2}
+    - target: {fileID: 4494806932287134970, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 631fc86211144424fb59f1984b7d72c2, type: 2}
+    - target: {fileID: 4494806932287134970, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1364075061547703358, guid: 631fc86211144424fb59f1984b7d72c2, type: 2}
     - target: {fileID: 4494806933570196522, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
       propertyPath: m_Name
       value: gama ovar
@@ -374,5 +390,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4494806933694006813, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 631fc86211144424fb59f1984b7d72c2, type: 2}
+    - target: {fileID: 4494806933694006813, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1364075061547703358, guid: 631fc86211144424fb59f1984b7d72c2, type: 2}
+    - target: {fileID: 4494806933719063219, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 631fc86211144424fb59f1984b7d72c2, type: 2}
+    - target: {fileID: 4494806933719063219, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1364075061547703358, guid: 631fc86211144424fb59f1984b7d72c2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b40fe8cf363c4b244a9b0fb7464960df, type: 3}
